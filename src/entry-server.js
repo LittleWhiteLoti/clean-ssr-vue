@@ -1,6 +1,6 @@
 import { createApp } from './main'
 import { renderToString } from 'vue/server-renderer'
-import path, { basename } from 'path'
+import { basename } from 'path'
 
 export async function render(url, manifest) {
   const { app, router } = createApp()
@@ -62,6 +62,8 @@ function renderPreloadLink(file) {
     return ` <link rel="preload" href="${file}" as="image" type="image/jpeg">`
   } else if (file.endsWith('.png')) {
     return ` <link rel="preload" href="${file}" as="image" type="image/png">`
+  } else if (file.endsWith('.ico')) {
+    return ` <link rel="icon" href="${file}" as="image" type="image/x-icon">`
   } else {
     // TODO
     return ''
