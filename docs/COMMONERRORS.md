@@ -1,4 +1,5 @@
-# Rollup options fail
+## Rollup options fail
+## example-external-component doesn't appear to be written in CJS, but also doesn't appear to be a valid ES module (i.e. it doesn't have "type": "module" or an .mjs extension for the entry point). Please contact the package author to fix.
 
 ### Delete node_modules directory
 ### Delete package-lock.json
