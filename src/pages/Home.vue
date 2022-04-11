@@ -15,7 +15,7 @@
     encrypted message:
     <p class="encrypted-msg"></p>
   </div>
-
+  <Test></Test>
   <ImportType />
 </template>
 
@@ -25,6 +25,9 @@ import { msg as virtualMsg } from '@virtual-file'
 import { reactive, defineAsyncComponent } from 'vue'
 import Button from '../components/button'
 const ImportType = load('ImportType')
+const Test = defineAsyncComponent(() =>
+  import('../views/Test.vue').then((mod) => mod.Foo)
+)
 const Foo = defineAsyncComponent(() =>
   import('../components/Foo').then((mod) => mod.Foo)
 )
